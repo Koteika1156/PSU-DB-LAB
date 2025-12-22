@@ -1,0 +1,30 @@
+mode: rabbitmq
+
+socket:
+  host: "127.0.0.1"
+  port: 9000
+
+rabbitmq:
+  url: "amqp://guest:guest@localhost:5672/%2F"
+  queue: "psu_lab_queue"
+  use_tls: false
+
+use_tls: false
+use_custom_crypto: true
+
+crypto:
+  importer_pubkey_path: "importer_public.pem"
+  importer_privkey_path: "importer_private.pem"
+
+tls:
+  certfile: "keys/server.crt"
+  keyfile: "keys/server.key"
+
+postgres:
+  dbname: "psu"
+  user: "postgres"
+  password: "123"
+  host: "localhost"
+  port: 5432
+
+send_interval_sec: 0.05
